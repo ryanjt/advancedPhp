@@ -9,7 +9,16 @@ class App{
     protected $params = [];
 
     public function __construct(){
-     print_r($this->parseUrl());
+     $url = $this->parseUrl();
+
+     if(file_exists('../app/controllers/'. $url[0] .'.php')){
+         $this->controller = $url[0];
+         unset($url[0]);
+     }
+
+     require_once '..app/controllers/' . $this->controller.'.php';
+
+     echo $this->controller; 
     }
 
     public function parseUrl(){
