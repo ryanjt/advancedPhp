@@ -9,7 +9,7 @@ class App{
     protected $params = [];
 
     public function __construct(){
-       parseUrl();
+      $this->parseUrl();
     }
 
     public function parseUrl(){
