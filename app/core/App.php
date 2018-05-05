@@ -1,7 +1,7 @@
 <?php
 
 class App{
-    public function _construct(){
+    public function __construct(){
         echo 'okk';
     }
 }
